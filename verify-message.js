@@ -22,7 +22,7 @@ client.once("ready", async () => {
     new ButtonBuilder()
       .setLabel("✅ Se vérifier")
       .setStyle(ButtonStyle.Link)
-      .setURL("http://localhost:3000")
+      .setURL("https://discord-verification-hpj5.onrender.com")
   );
 
   await channel.send({
