@@ -1,102 +1,159 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ZEROX Vérification</title>
 
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
-      height: 100vh;
+      min-height: 100vh;
       font-family: Arial, sans-serif;
       color: white;
       display: flex;
       justify-content: center;
       align-items: center;
-      background:
-        linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.75)),
-        url("https://images.unsplash.com/photo-1518709268805-4e9042af2176?auto=format&fit=crop&w=1600&q=80");
-      background-size: cover;
-      background-position: center;
       overflow: hidden;
+      background:
+        radial-gradient(circle at 20% 55%, rgba(190, 20, 80, 0.45), transparent 28%),
+        radial-gradient(circle at 80% 55%, rgba(190, 20, 80, 0.45), transparent 28%),
+        radial-gradient(circle at center, rgba(80, 10, 35, 0.55), transparent 45%),
+        linear-gradient(135deg, #07070b, #150812, #030305);
+    }
+
+    body::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 15% 65%, rgba(255, 40, 115, 0.35), transparent 18%),
+        radial-gradient(circle at 85% 65%, rgba(255, 40, 115, 0.35), transparent 18%);
+      filter: blur(20px);
+      opacity: 0.8;
     }
 
     .zerox {
       position: absolute;
-      top: 50px;
-      font-size: 130px;
+      top: 55px;
+      font-size: 115px;
       font-weight: 900;
-      letter-spacing: 15px;
-      color: #ff2d75;
-      filter: blur(6px);
-      opacity: 0.75;
-      text-shadow: 0 0 35px #ff2d75;
+      letter-spacing: 22px;
+      color: rgba(255, 55, 120, 0.22);
+      text-shadow: 0 0 18px rgba(255, 55, 120, 0.25);
+      filter: blur(2px);
     }
 
     .verified {
       position: absolute;
-      top: 190px;
-      font-size: 28px;
-      letter-spacing: 18px;
-      color: #ff4f8b;
-      text-shadow: 0 0 20px #ff2d75;
+      top: 205px;
+      font-size: 26px;
+      letter-spacing: 24px;
+      color: rgba(255, 65, 130, 0.75);
     }
 
     .card {
       position: relative;
-      background: rgba(15, 15, 20, 0.65);
-      border: 1px solid rgba(255, 45, 117, 0.7);
-      box-shadow: 0 0 35px rgba(255, 45, 117, 0.45);
-      backdrop-filter: blur(14px);
-      border-radius: 25px;
-      width: 90%;
-      max-width: 560px;
-      padding: 45px 35px;
-      text-align: center;
       z-index: 2;
+      width: 90%;
+      max-width: 680px;
+      padding: 55px 55px 50px;
+      text-align: center;
+      border-radius: 24px;
+      background: rgba(15, 17, 23, 0.82);
+      border: 1px solid rgba(255, 65, 130, 0.8);
+      box-shadow: 0 0 30px rgba(255, 45, 120, 0.35);
+      backdrop-filter: blur(18px);
     }
 
-    .icon {
-      font-size: 50px;
-      color: #ff2d75;
-      margin-bottom: 20px;
+    .shield {
+      font-size: 58px;
+      color: #ff3c7d;
+      margin-bottom: 25px;
+      text-shadow: 0 0 25px rgba(255, 60, 125, 0.9);
     }
 
     h1 {
-      font-size: 45px;
-      margin: 10px 0;
+      font-size: 54px;
+      margin: 0;
+      font-weight: 800;
+    }
+
+    .line {
+      width: 55px;
+      height: 2px;
+      background: #ff3c7d;
+      margin: 25px auto;
+      box-shadow: 0 0 18px #ff3c7d;
     }
 
     p {
-      color: #d1d5db;
-      font-size: 20px;
+      font-size: 24px;
+      color: #cfd1d8;
       line-height: 1.5;
-      margin-bottom: 35px;
+      margin-bottom: 40px;
     }
 
     .btn {
-      display: inline-block;
-      background: linear-gradient(135deg, #ff2d75, #ff5c8a);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+      background: linear-gradient(135deg, #ff3d7e, #f12d70);
       color: white;
       text-decoration: none;
-      font-size: 22px;
+      font-size: 25px;
       font-weight: bold;
-      padding: 18px 35px;
-      border-radius: 14px;
-      box-shadow: 0 0 25px rgba(255, 45, 117, 0.7);
+      padding: 22px 55px;
+      border-radius: 12px;
+      box-shadow: 0 0 30px rgba(255, 55, 120, 0.65);
       transition: 0.2s;
     }
 
     .btn:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 40px rgba(255, 45, 117, 1);
+      transform: scale(1.04);
+      box-shadow: 0 0 45px rgba(255, 55, 120, 1);
     }
 
     .small {
-      margin-top: 25px;
+      margin-top: 35px;
+      font-size: 19px;
       color: #c9c9c9;
-      font-size: 15px;
+    }
+
+    @media (max-width: 700px) {
+      .zerox {
+        font-size: 55px;
+        letter-spacing: 10px;
+        top: 70px;
+      }
+
+      .verified {
+        top: 145px;
+        font-size: 16px;
+        letter-spacing: 12px;
+      }
+
+      .card {
+        padding: 40px 25px;
+      }
+
+      h1 {
+        font-size: 38px;
+      }
+
+      p {
+        font-size: 18px;
+      }
+
+      .btn {
+        font-size: 18px;
+        padding: 18px 25px;
+      }
     }
   </style>
 </head>
@@ -106,9 +163,12 @@
   <div class="verified">VÉRIFIÉ</div>
 
   <div class="card">
-    <div class="icon">🛡️</div>
+    <div class="shield">🛡️</div>
+
     <h1>Bienvenue 🌹</h1>
-    <p>Vérifie ton compte Discord pour accéder à l’ensemble du serveur.</p>
+    <div class="line"></div>
+
+    <p>Vérifie ton compte Discord pour accéder à l'ensemble du serveur.</p>
 
     <a class="btn" href="/login">🎮 Se vérifier avec Discord</a>
 
