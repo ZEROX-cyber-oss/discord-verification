@@ -1,77 +1,118 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Vérification Discord</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ZEROX Vérification</title>
 
   <style>
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background: linear-gradient(135deg, #111827, #5865F2);
       height: 100vh;
+      font-family: Arial, sans-serif;
+      color: white;
       display: flex;
       justify-content: center;
       align-items: center;
-      color: white;
+      background:
+        linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.75)),
+        url("https://images.unsplash.com/photo-1518709268805-4e9042af2176?auto=format&fit=crop&w=1600&q=80");
+      background-size: cover;
+      background-position: center;
+      overflow: hidden;
     }
 
-    .box {
-      background: rgba(0, 0, 0, 0.35);
-      padding: 40px;
-      border-radius: 20px;
-      text-align: center;
+    .zerox {
+      position: absolute;
+      top: 50px;
+      font-size: 130px;
+      font-weight: 900;
+      letter-spacing: 15px;
+      color: #ff2d75;
+      filter: blur(6px);
+      opacity: 0.75;
+      text-shadow: 0 0 35px #ff2d75;
+    }
+
+    .verified {
+      position: absolute;
+      top: 190px;
+      font-size: 28px;
+      letter-spacing: 18px;
+      color: #ff4f8b;
+      text-shadow: 0 0 20px #ff2d75;
+    }
+
+    .card {
+      position: relative;
+      background: rgba(15, 15, 20, 0.65);
+      border: 1px solid rgba(255, 45, 117, 0.7);
+      box-shadow: 0 0 35px rgba(255, 45, 117, 0.45);
+      backdrop-filter: blur(14px);
+      border-radius: 25px;
       width: 90%;
-      max-width: 420px;
-      box-shadow: 0 0 30px rgba(0,0,0,0.4);
+      max-width: 560px;
+      padding: 45px 35px;
+      text-align: center;
+      z-index: 2;
+    }
+
+    .icon {
+      font-size: 50px;
+      color: #ff2d75;
+      margin-bottom: 20px;
     }
 
     h1 {
-      margin-bottom: 10px;
-      font-size: 32px;
+      font-size: 45px;
+      margin: 10px 0;
     }
 
     p {
       color: #d1d5db;
-      margin-bottom: 30px;
+      font-size: 20px;
+      line-height: 1.5;
+      margin-bottom: 35px;
     }
 
     .btn {
       display: inline-block;
-      background: #5865F2;
+      background: linear-gradient(135deg, #ff2d75, #ff5c8a);
       color: white;
       text-decoration: none;
-      padding: 15px 25px;
-      border-radius: 12px;
-      font-size: 18px;
+      font-size: 22px;
       font-weight: bold;
+      padding: 18px 35px;
+      border-radius: 14px;
+      box-shadow: 0 0 25px rgba(255, 45, 117, 0.7);
       transition: 0.2s;
     }
 
     .btn:hover {
-      background: #4752c4;
       transform: scale(1.05);
+      box-shadow: 0 0 40px rgba(255, 45, 117, 1);
     }
 
     .small {
-      margin-top: 20px;
-      font-size: 12px;
-      color: #9ca3af;
+      margin-top: 25px;
+      color: #c9c9c9;
+      font-size: 15px;
     }
   </style>
 </head>
 <body>
 
-  <div class="box">
-    <h1>Bienvenue 👋</h1>
-    <p>Vérifie ton compte Discord pour accéder aux salons du serveur.</p>
+  <div class="zerox">ZEROX</div>
+  <div class="verified">VÉRIFIÉ</div>
 
-    <a class="btn" href="/login">✅ Se vérifier avec Discord</a>
+  <div class="card">
+    <div class="icon">🛡️</div>
+    <h1>Bienvenue 🌹</h1>
+    <p>Vérifie ton compte Discord pour accéder à l’ensemble du serveur.</p>
 
-    <div class="small">
-      Vérification sécurisée via Discord OAuth2
-    </div>
+    <a class="btn" href="/login">🎮 Se vérifier avec Discord</a>
+
+    <div class="small">🔒 Vérification sécurisée via Discord OAuth2</div>
   </div>
 
 </body>
