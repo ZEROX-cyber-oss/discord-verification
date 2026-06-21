@@ -1,15 +1,78 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
-    <title>Verification Discord</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vérification Discord</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #111827, #5865F2);
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+    }
+
+    .box {
+      background: rgba(0, 0, 0, 0.35);
+      padding: 40px;
+      border-radius: 20px;
+      text-align: center;
+      width: 90%;
+      max-width: 420px;
+      box-shadow: 0 0 30px rgba(0,0,0,0.4);
+    }
+
+    h1 {
+      margin-bottom: 10px;
+      font-size: 32px;
+    }
+
+    p {
+      color: #d1d5db;
+      margin-bottom: 30px;
+    }
+
+    .btn {
+      display: inline-block;
+      background: #5865F2;
+      color: white;
+      text-decoration: none;
+      padding: 15px 25px;
+      border-radius: 12px;
+      font-size: 18px;
+      font-weight: bold;
+      transition: 0.2s;
+    }
+
+    .btn:hover {
+      background: #4752c4;
+      transform: scale(1.05);
+    }
+
+    .small {
+      margin-top: 20px;
+      font-size: 12px;
+      color: #9ca3af;
+    }
+  </style>
 </head>
 <body>
 
-<h1>Verification Discord</h1>
+  <div class="box">
+    <h1>Bienvenue 👋</h1>
+    <p>Vérifie ton compte Discord pour accéder aux salons du serveur.</p>
 
-<a href="/login">
-    <button>Se verifier</button>
-</a>
+    <a class="btn" href="/login">✅ Se vérifier avec Discord</a>
+
+    <div class="small">
+      Vérification sécurisée via Discord OAuth2
+    </div>
+  </div>
 
 </body>
 </html>
